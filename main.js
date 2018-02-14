@@ -69,4 +69,30 @@ function addCharmed () {
     effect.style.backgroundColor = 'pink';
 }
 
+function addFrightened () {
+    let charNameGet = document.getElementById('charInput').value;
+    let effectWrapFind = document.getElementById(charNameGet+'Effects');
+    let newEffectDiv = document.createElement('div');
+    let effectLength = Number(document.getElementById('turn_input').value);
+    newEffectDiv.className = 'frightened';
+    newEffectDiv.id = charNameGet + "Frightened";
+    effectWrapFind.appendChild(newEffectDiv);
+    let effect = document.getElementById(charNameGet + "Frightened");
+    effect.style.width = String(effectLength*50)+'px';
+    effect.style.minHeight = "20px";
+    effect.style.backgroundColor = 'blue';
+}
+function addBlinded() {
+    let charNameGet = document.getElementById('charInput').value;
+    let effectWrapFind = document.getElementById(charNameGet+'Effects');
+    let newEffectDiv = document.createElement('div');
+    let effectLength = Number(document.getElementById('turn_input').value);
+    newEffectDiv.className = 'blinded';
+    newEffectDiv.id = charNameGet + "Blinded";
+    effectWrapFind.appendChild(newEffectDiv);
+    let effect = document.getElementById(charNameGet + "Blinded");
+    effect.style.width = String(effectLength*50)+'px';
+    effect.style.minHeight = "20px";
+    effect.style.backgroundColor = 'black';
+}
 
