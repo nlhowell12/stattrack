@@ -1,0 +1,133 @@
+#page_wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Upper display area */
+#display {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    border: 1px solid black;
+    overflow: scroll;
+}
+.charName {
+    display: flex;
+    width: 200px;
+    border: 1px solid black;
+    min-height: 50px;
+    align-content: center;
+    justify-content: center;
+}
+.charName p {
+    
+}
+
+.charWrap {
+    display: flex;
+}
+
+.effectDisplay {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    flex-grow: 1;
+}
+/* Lower Button Boxes */
+#lower_wrap {
+    display: flex;
+
+}
+#but_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 50vh;
+    border: 1px solid black;
+    justify-content: space-around;
+}
+
+#effect_length {
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+}
+#custom_effect {
+    display: flex;
+    width: 100%;
+}
+
+#custom_effect input {
+    width: 75%;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 10px;
+}
+#custom_but {
+height: 50px;
+margin-left: 10px;
+border-radius: 20px;
+}
+#effect_length p {
+    padding-left: 20px;
+}
+#effect_length input {
+    font-size: 30px;
+    text-align: center;
+}
+#turn_input {
+    height: 50px;
+    width: 100px;
+    margin-left: 50px;
+}
+
+.effect_but{
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    
+}
+
+#input_box {
+    width: 50%;    
+    height: 50vh;
+    border: 1px solid black;
+}
+
+#char_text {
+    margin-left: 20px;
+}
+
+#char_text input {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+}
+#char_text button {
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+#turn_counter p {
+    margin-left: 20px
+}
+#turnDisplay {
+    width: 100px;
+    height: 50px;
+    margin-left: 20px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+#turnClick {
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-left: 20px
+}
