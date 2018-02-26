@@ -14,14 +14,20 @@
 }
 .charName {
     display: flex;
+    flex-direction: column;
     width: 200px;
     border: 1px solid black;
     min-height: 50px;
-    align-content: center;
     justify-content: center;
 }
+
 .charName p {
-    
+    align-self: center;
+}
+
+#turnDisplay {
+    display: flex;
+    justify-content: center;
 }
 
 .charWrap {
@@ -33,6 +39,17 @@
     flex-direction: column;
     border: 1px solid black;
     flex-grow: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.effect {
+    border: .25px solid black;
 }
 /* Lower Button Boxes */
 #lower_wrap {
