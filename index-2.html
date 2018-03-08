@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DnD Stat Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style-2.css" />
+</head>
+<body>
+    <!-- Main Page Wrapper -->
+    <div id="page_wrap">
+        <!-- Character and Effect display box -->
+        <section id="display">
+            
+        </section>
+        <section id="lower_wrap">
+        <!-- Box containing effect buttons -->
+        <section id="but_box">
+            <section id="effect_length">
+                    <input type="number" id="turn_input">
+                    <p>Length of Effect</p>
+                </section>
+                    <section id="custom_effect">
+                            <input type="text" id="custom_text">
+                            <button id="custom_but">Custom Effect</button> 
+                    </section>
+            <button class="effect_but" id="stunned">Stunned</button>
+            <button class="effect_but" id="poisoned">Poisoned</button>
+            <button class="effect_but" id="charmed" >Charmed</button>
+            <button class="effect_but" id="frightened">Frightened</button>
+            <button class="effect_but" id="blinded">Blinded</button>
+            <button class="effect_but" id="fatigued">Fatigued</button>
+            <button class="effect_but" id="paralyzed">Paralyzed</button>
+        </section>
+        <!-- Inputting character names and length of effects -->
+        <section id="input_box">
+            <section id="char_text">
+                <p>Character Name</p>
+                <input id='charInput' type="text">
+                <button id='charSubmit' onclick="addPlayerToState()">Submit</button>
+                <button id="removeChar">Remove</button>
+            </section>
+            <section id="turn_counter">
+                <p>Turn Counter</p>
+                <div id="turnDisplay"></div>
+                <button id="turnClick">Next Turn</button>
+            </section>
+        </section>
+    </section>
+    </div>
+    <script src="main-2.js"></script>
+</body>
+</html>
