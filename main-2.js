@@ -40,7 +40,7 @@ function selectPlayerElement() {
     let clickEvent = event.target;
     let selectedPlayer = '';
     selectedPlayer = clickEvent.id;
-
+    document.getElementById(clickEvent.id).style = "border: 2px solid red";
 }
 
 function buttonClick() {
