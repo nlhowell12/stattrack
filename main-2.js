@@ -1,5 +1,5 @@
 const state = {
-	players: {
+    players: {
 
     }
 }
@@ -16,7 +16,7 @@ function createPlayer(name) {
     }
 }
 
-function addPlayerToState () {
+function addPlayerToState() {
     let charName = document.getElementById("charInput")
     createPlayer(charName.value);
     charName.value = '';
@@ -29,29 +29,45 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", buttonClick);
 }
 
+function addPlayerClick() {
+    var players = document.getElementsByClassName("player");
+    for (let i = 0; i < players.length; i++) {
+        players[i].addEventListener("click", selectPlayerElement)
+    }
+}
+
+function selectPlayerElement() {
+    let clickEvent = event.target;
+    let selectedPlayer = '';
+    selectedPlayer = clickEvent.id;
+
+}
+
 function buttonClick() {
     let clickEvent = event.target;
-    console.log(clickEvent.id)
-    console.log(clickEvent.className)
-    let button = document.getElementsByTagName("button");
+    let length = document.getElementById("lengthInput").value;
+
     if (clickEvent.className == "effect_but") {
-        addEffect(charName, clickEvent.id, length)
+        addEffect(selectedPlayer, clickEvent.id, length)
     }
+    drawPlayers();
+    addPlayerClick();
 }
 
 function addEffect(charName, effectName, length) {
     state.players.charName[effectName] = length;
 }
+
 function drawPlayers() {
-	for (let player in state.players) {
+    for (let player in state.players) {
         drawPlayer(player);
     }
 }
 
 function drawPlayer(playerName) {
-	let playerElement = document.getElementById(playerName);
+    let playerElement = document.getElementById(playerName);
     const player = state.players[playerName];
-    
+
     if (!playerElement) {
         playerElement = document.createElement("div");
         playerElement.id = playerName;
@@ -65,8 +81,8 @@ function drawPlayer(playerName) {
             playerElement.appendChild(effectElement);
         }
     }
-    
-	for (let effect in player) {
+
+    for (let effect in player) {
         const currentEffect = document.querySelector("#" + playerName + " > .effect." + effect);
         currentEffect.style.width = (player[effect] * 50) + "px";
         currentEffect.style.display = player[effect] ? "block" : "none";
@@ -74,9 +90,7 @@ function drawPlayer(playerName) {
 }
 
 function log(value) {
-	const div  = document.createElement("div");
+    const div = document.createElement("div");
     div.textContent = JSON.stringify(value);
     document.display.appendChild(div);
 }
-
-drawPlayers();
