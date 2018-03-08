@@ -167,9 +167,8 @@ function nextTurn() {
             let currentEffect = effect[i];
             currentEffect.style.width = (Math.max(0, currentEffect.offsetWidth - 50)) + "px";
         
-            if (currentEffect.offsetWidth <= 5){
+            if (currentEffect.offsetWidth <= 10){
             currentEffect.style.display = 'none';
-            console.log(currentEffect.style.width)
             }
         }
     }
