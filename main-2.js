@@ -38,15 +38,15 @@ function addPlayerClick() {
 
 function selectPlayerElement() {
     let clickEvent = event.target;
-    let selectedPlayer = '';
-    selectedPlayer = clickEvent.id;
-    document.getElementById(clickEvent.id).style = "border: 2px solid red";
+    let selectedPlayer = clickEvent.id;
+    document.getElementById(selectedPlayer).style = "border: 2px solid red";
+    console.log(selectedPlayer);
 }
 
 function buttonClick() {
     let clickEvent = event.target;
     let length = document.getElementById("lengthInput").value;
-
+    // Need to add some way to get selectedPlayer from selectPlayerElement!!!
     if (clickEvent.className == "effect_but") {
         addEffect(selectedPlayer, clickEvent.id, length)
     }
@@ -55,7 +55,7 @@ function buttonClick() {
 }
 
 function addEffect(charName, effectName, length) {
-    state.players.charName[effectName] = length;
+    state.players[charName][effectName] = length;
 }
 
 function drawPlayers() {
