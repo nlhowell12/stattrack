@@ -19,6 +19,7 @@
   
   .poisoned {
     background-color: green;
+    color: lightcyan;
   }
   
   .stunned {
@@ -27,6 +28,26 @@
   
   .charmed {
     background-color: pink;
+
+  }
+
+  .frightened {
+      background-color: blue;
+      color: darkturquoise;
+  }
+
+  .blinded {
+      background-color: black;
+      color: white;
+  }
+
+  .fatigued {
+      background-color: purple;
+      color: lightcoral;
+  }
+
+  .paralyzed {
+      background-color: orange;
   }
 
   #page_wrap {
