@@ -70,6 +70,7 @@
     flex-direction: column;
     border-left: 1px solid blue;
     flex-grow: 1;
+    pointer-events: none;
 }
 
 input::-webkit-outer-spin-button,
