@@ -6,6 +6,15 @@ const state = {
 
 selectedPlayerElement = "";
 
+// Sets the charSubmit button to trigger after pressing Enter
+document.getElementById("charInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("charSubmit").click();
+    }
+});
+
 function createPlayer(name) {
     state.players[name] = {
         stunned: 0,
@@ -101,6 +110,7 @@ function drawPlayer(playerName) {
         findDisplay.appendChild(playerElement);
         playerElement.appendChild(namePlate)
         document.getElementById(playerName + "Plate").innerHTML = playerName;
+
         for (let effect in player) {
             let effectElement = document.createElement("div");
             effectElement.classList.add("effect", effect);
