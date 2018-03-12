@@ -63,10 +63,11 @@ function buttonClick() {
     switch (clickEvent.id) {
         case "charSubmit":
         addPlayerToState();
+        addPlayerClickResponse();
         break;
     }
     drawPlayers();
-    addPlayerClickResponse();
+    
     length.value = '';
 }
 
