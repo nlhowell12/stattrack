@@ -55,8 +55,15 @@ function selectPlayerElement() {
 function buttonClick() {
     let clickEvent = event.target;
     let length = document.getElementById("lengthInput");
-    if (clickEvent.className == "effect_but") {
-        addEffect(selectedPlayerElement, clickEvent.id, length.value)
+    switch (clickEvent.className) {
+        case "effect_but":
+        addEffect(selectedPlayerElement, clickEvent.id, length.value);
+        break;
+    }
+    switch (clickEvent.id) {
+        case "charSubmit":
+        addPlayerToState();
+        break;
     }
     drawPlayers();
     addPlayerClickResponse();
