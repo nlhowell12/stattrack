@@ -4,6 +4,8 @@ const state = {
     }
 }
 
+selectedPlayerElement = "";
+
 function createPlayer(name) {
     state.players[name] = {
         stunned: 0,
@@ -29,7 +31,7 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", buttonClick);
 }
 
-function addPlayerClick() {
+function addPlayerClickResponse() {
     var players = document.getElementsByClassName("player");
     for (let i = 0; i < players.length; i++) {
         players[i].addEventListener("click", selectPlayerElement)
@@ -39,23 +41,35 @@ function addPlayerClick() {
 function selectPlayerElement() {
     let clickEvent = event.target;
     let selectedPlayer = clickEvent.id;
+    let findPlayers = document.getElementsByClassName("player");
+    // For loop resets other player elements for clarity
+    for (let i = 0; i < findPlayers.length; i++) {
+        if (findPlayers[i].id != selectedPlayer) {
+            (findPlayers[i]).style = "border: 1px solid blue";
+        }
+    }
     document.getElementById(selectedPlayer).style = "border: 2px solid red";
-    console.log(selectedPlayer);
+    selectedPlayerElement = clickEvent.id;
 }
 
 function buttonClick() {
     let clickEvent = event.target;
-    let length = document.getElementById("lengthInput").value;
-    // Need to add some way to get selectedPlayer from selectPlayerElement!!!
+    let length = document.getElementById("lengthInput");
     if (clickEvent.className == "effect_but") {
-        addEffect(selectedPlayer, clickEvent.id, length)
+        addEffect(selectedPlayerElement, clickEvent.id, length.value)
     }
     drawPlayers();
-    addPlayerClick();
+    addPlayerClickResponse();
+    length.value = '';
 }
 
 function addEffect(charName, effectName, length) {
+    if (charName != "") {
     state.players[charName][effectName] = length;
+    }
+    else {
+        alert("Please select a character");
+    }
 }
 
 function drawPlayers() {
@@ -71,13 +85,17 @@ function drawPlayer(playerName) {
     if (!playerElement) {
         playerElement = document.createElement("div");
         playerElement.id = playerName;
+        namePlate = document.createElement('div');
+        namePlate.id = playerName + "Plate";
+        namePlate.classList.add("namePlate");
         playerElement.classList.add("player");
         let findDisplay = document.getElementById('display');
         findDisplay.appendChild(playerElement);
+        playerElement.appendChild(namePlate)
+        document.getElementById(playerName + "Plate").innerHTML = playerName;
         for (let effect in player) {
             let effectElement = document.createElement("div");
             effectElement.classList.add("effect", effect);
-            effectElement.textContent = player[effect];
             playerElement.appendChild(effectElement);
         }
     }
@@ -86,11 +104,6 @@ function drawPlayer(playerName) {
         const currentEffect = document.querySelector("#" + playerName + " > .effect." + effect);
         currentEffect.style.width = (player[effect] * 50) + "px";
         currentEffect.style.display = player[effect] ? "block" : "none";
+        currentEffect.textContent = player[effect];
     }
-}
-
-function log(value) {
-    const div = document.createElement("div");
-    div.textContent = JSON.stringify(value);
-    document.display.appendChild(div);
 }

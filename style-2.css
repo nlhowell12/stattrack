@@ -1,10 +1,20 @@
 .player {
+    display: flex;
     border: 2px solid blue;
     height: 50px;
   }
   
+  .namePlate {
+    align-self: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+  }
+
   .effect {
     display: none;
+    height: 20px;
+    text-align: center;
   }
   
   .poisoned {
@@ -58,7 +68,7 @@
 .effectDisplay {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border-left: 1px solid blue;
     flex-grow: 1;
 }
 
@@ -113,6 +123,7 @@ border-radius: 20px;
     padding-left: 20px;
 }
 #effect_length input {
+    height: 50px;
     font-size: 30px;
     text-align: center;
 }
