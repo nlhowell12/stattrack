@@ -1,7 +1,7 @@
 .player {
     display: flex;
     border: 2px solid blue;
-    height: 50px;
+    min-height: 50px;
   }
   
   .namePlate {
@@ -89,7 +89,7 @@
 .effectDisplay {
     display: flex;
     flex-direction: column;
-    border-left: 1px solid blue;
+    border-left: 2px solid black;
     flex-grow: 1;
     pointer-events: none;
 }

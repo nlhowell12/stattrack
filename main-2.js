@@ -28,8 +28,11 @@ function createPlayer(name) {
 }
 
 function addPlayerToState() {
-    let charName = document.getElementById("charInput")
+    let charName = document.getElementById("charInput");
+    let player = document.getElementById(charName.value);
+    if (!player) {
     createPlayer(charName.value);
+    }
     charName.value = '';
     drawPlayers();
 }
@@ -105,21 +108,25 @@ function drawPlayer(playerName) {
         namePlate = document.createElement('div');
         namePlate.id = playerName + "Plate";
         namePlate.classList.add("namePlate");
+        effectDisplay = document.createElement('div');
+        effectDisplay.id = playerName + "EffectDisplay";
+        effectDisplay.classList.add('effectDisplay');
         playerElement.classList.add("player");
         let findDisplay = document.getElementById('display');
         findDisplay.appendChild(playerElement);
         playerElement.appendChild(namePlate)
+        playerElement.appendChild(effectDisplay);
         document.getElementById(playerName + "Plate").innerHTML = playerName;
 
         for (let effect in player) {
             let effectElement = document.createElement("div");
             effectElement.classList.add("effect", effect);
-            playerElement.appendChild(effectElement);
+            effectDisplay.appendChild(effectElement);
         }
     }
 
     for (let effect in player) {
-        const currentEffect = document.querySelector("#" + playerName + " > .effect." + effect);
+        const currentEffect = document.querySelector("#" + playerName + "EffectDisplay" + " > .effect." + effect);
         currentEffect.style.width = (player[effect] * 50) + "px";
         currentEffect.style.display = player[effect] ? "block" : "none";
         currentEffect.textContent = player[effect];
