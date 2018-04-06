@@ -77,6 +77,14 @@ function buttonClick() {
         addPlayerToState();
         addPlayerClickResponse();
         break;
+        case "custom_but":
+        let customText = document.getElementById("custom_text").value;
+        state.players[selectedPlayerElement][customText] = Number(length.value);
+        let effectElement = document.createElement("div");
+        let effectDisplay = document.getElementById(selectedPlayerElement + "EffectDisplay");
+        effectElement.classList.add("effect", customText);
+        effectDisplay.appendChild(effectElement);
+        console.log(state);
     }
     drawPlayers();
     
