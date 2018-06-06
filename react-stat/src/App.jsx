@@ -9,8 +9,9 @@ class App extends Component {
     }
     addPlayer = (name, init) => evt => {
         const { players } = this.state;
+        let playerExists = false;
         let player = {
-            name: name,
+            name,
             initiative: init,
             effects: [
                 { stunned: 0 },
@@ -21,8 +22,13 @@ class App extends Component {
                 { fatigued: 0 },
                 { paralyzed: 0}
                 ]
+        } 
+        for (let player of players) {
+            if (player.name === name) {
+                playerExists = true
+            }
         }
-        this.setState({players:  [...players, player]})
+        playerExists ? null : this.setState({players: [...players, player]})
     }
   render() {
     return (
