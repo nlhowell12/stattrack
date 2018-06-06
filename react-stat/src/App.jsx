@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharDisplay from './CharDisplay.jsx';
+import InputBox from './InputBox.jsx';
 
 class App extends Component {
     state = {
@@ -32,6 +33,11 @@ class App extends Component {
         }
         playerExists || this.state.newPlayer === "" ? alert("Please enter a name") : this.setState({players: [...players, player], newPlayer: "", newPlayerInit: ""})
     }
+    changeState = (change) => {
+        console.log("trigger")
+        this.setState(change)
+    }
+
   render() {
     return (
       <div className="App">
@@ -54,18 +60,7 @@ class App extends Component {
                 <button className="effect_but" id="fatigued" >Fatigued</button>
                 <button className="effect_but" id="paralyzed" >Paralyzed</button>
             </section>
-            <section id="input_box">
-                <section id="char_text">
-                    <input id='charInput' type="text" placeholder={"Enter Character Name"} value={this.state.newPlayer} onChange={evt => {this.setState({newPlayer: evt.target.value})}}/>
-                    <input type="number" id="initInput" placeholder={"Initiative"} value={this.state.newPlayerInit} onChange={evt => {this.setState({newPlayerInit: Number(evt.target.value)})}}/>
-                    <button id='charSubmit' onClick={this.addPlayer(this.state.newPlayer, this.state.newPlayerInit)}>Submit</button>
-                </section>
-                <section id="turn_counter">
-                    <p>Turn Counter</p>
-                    <div id="turnDisplay"></div>
-                    <button id="turnClick" >Next Turn</button>
-                </section>
-            </section>
+            <InputBox newPlayer={this.state.newPlayer} newPlayerInit={this.state.newPlayerInit} addPlayer = {this.addPlayer} changeState={this.changeState}/>
         </section>
       </div>
     );
