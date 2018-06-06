@@ -13,8 +13,10 @@ class InputBox extends Component {
     </section>
     <section id="turn_counter">
         <p>Turn Counter</p>
-        <div id="turnDisplay"></div>
-        <button id="turnClick" >Next Turn</button>
+        <div id="turnDisplay">
+        {this.props.turnNumber}
+        </div>
+        <button id="turnClick" onClick={this.props.nextTurn}>Next Turn</button>
     </section>
 </section>
         )

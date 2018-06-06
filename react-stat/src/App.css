@@ -208,9 +208,12 @@ border-radius: 20px;
   font-size: 20px;
   border-radius: 20px;
 }
-
+#turn_counter {
+  display: flex;
+  flex-direction: column;
+}
 #turn_counter p {
-  margin-left: 20px
+  margin-left: 20px;
 }
 #turnDisplay {
   width: 100px;
@@ -218,13 +221,19 @@ border-radius: 20px;
   margin-left: 20px;
   border: 1px solid black;
   margin-bottom: 10px;
+  font-size: 30pt;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  align-self: center;
 }
 #turnClick {
   height: 50px;
   width: 100px;
   font-size: 20px;
   border-radius: 20px;
-  margin-left: 20px
+  margin-left: 20px;
+  align-self: center;
 }
 
 @keyframes App-logo-spin {
