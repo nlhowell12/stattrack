@@ -15,39 +15,39 @@
             
         </section>
         <section id="lower_wrap">
-        <!-- Box containing effect buttons -->
-        <section id="but_box">
-            <section id="effect_length">
+            <!-- Box containing effect buttons -->
+            <section id="but_box">
+                <section id="effect_length">
                     <input type="number" id="turn_input">
                     <p>Length of Effect</p>
                 </section>
-                    <section id="custom_effect">
-                            <input type="text" id="custom_text">
-                            <button id="custom_but" onclick="addCustom()">Custom Effect</button> 
-                    </section>
-            <button class="effect_but" id="stunned" onclick="addStunned()">Stunned</button>
-            <button class="effect_but" id="poisoned" onclick="addPoisoned()">Poisoned</button>
-            <button class="effect_but" id="charmed" onclick="addCharmed()">Charmed</button>
-            <button class="effect_but" id="frightened" onclick="addFrightened()">Frightened</button>
-            <button class="effect_but" id="blinded" onclick ="addBlinded()">Blinded</button>
-            <button class="effect_but" id="fatigued" onclick="addFatigued()">Fatigued</button>
-            <button class="effect_but" id="paralyzed" onclick="addParalyzed()">Paralyzed</button>
-        </section>
-        <!-- Inputting character names and length of effects -->
-        <section id="input_box">
-            <section id="char_text">
-                <p>Character Name</p>
-                <input id='charInput' type="text">
-                <button id='charSubmit' onclick="charAdd()">Submit</button>
-                <button id="removeChar" onclick="charRemove()">Remove</button>
+                <section id="custom_effect">
+                    <input type="text" id="custom_text">
+                    <button id="custom_but" onclick="addCustom()">Custom Effect</button> 
+                </section>
+                <button class="effect_but" id="stunned" onclick="addStunned()">Stunned</button>
+                <button class="effect_but" id="poisoned" onclick="addPoisoned()">Poisoned</button>
+                <button class="effect_but" id="charmed" onclick="addCharmed()">Charmed</button>
+                <button class="effect_but" id="frightened" onclick="addFrightened()">Frightened</button>
+                <button class="effect_but" id="blinded" onclick ="addBlinded()">Blinded</button>
+                <button class="effect_but" id="fatigued" onclick="addFatigued()">Fatigued</button>
+                <button class="effect_but" id="paralyzed" onclick="addParalyzed()">Paralyzed</button>
             </section>
-            <section id="turn_counter">
-                <p>Turn Counter</p>
-                <div id="turnDisplay"></div>
-                <button id="turnClick" onclick="nextTurn()">Next Turn</button>
+            <!-- Inputting character names and length of effects -->
+            <section id="input_box">
+                <section id="char_text">
+                    <p>Character Name</p>
+                    <input id='charInput' type="text">
+                    <button id='charSubmit' onclick="charAdd()">Submit</button>
+                    <button id="removeChar" onclick="charRemove()">Remove</button>
+                </section>
+                <section id="turn_counter">
+                    <p>Turn Counter</p>
+                    <div id="turnDisplay"></div>
+                    <button id="turnClick" onclick="nextTurn()">Next Turn</button>
+                </section>
             </section>
         </section>
-    </section>
     </div>
     <script src="main.js"></script>
 </body>

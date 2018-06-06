@@ -1,0 +1,36 @@
+html
+    head
+        title DnD Stat Tracker
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js")
+        link(rel="stylesheet", type="text/css", media="screen", href="style.css")
+    body  
+        #page_wrap
+            #display
+            #lower_wrap
+                #but_box
+                    #effect_length
+                        input(type="number", id="turn_input")
+                        p Length of Effect
+                    #custom_effect
+                        input(type="text", id="custom_text")
+                        button#custom_but Custom Effect
+                    button.effect_but#stunned Stunned
+                    button.effect_but#poisoned Poisoned
+                    button.effect_but#charmed Charmed
+                    button.effect_but#frightened Frightened
+                    button.effect_but#blinded Blinded
+                    button.effect_but#fatigued Fatigued
+                    button.effect_but#paralyzed Paralyzed
+                #input_box
+                    #char_text
+                        p Character Name
+                        input#charInput(type="text")
+                        button#charSubmit Submit
+                        button#removeChar Remove
+                    #turn_counter
+                        p Turn Counter
+                        #turnDisplay
+                        button#turnClick Next Turn
+script(src="main-2.js")
+                    
+                    

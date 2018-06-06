@@ -1,0 +1,25 @@
+{
+  "name": "stattrack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlhowell12/stattrack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlhowell12/stattrack/issues"
+  },
+  "homepage": "https://github.com/nlhowell12/stattrack#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3",
+    "ramda": "^0.25.0",
+    "socket.io": "^2.1.0"
+  }
+}
