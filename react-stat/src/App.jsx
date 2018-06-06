@@ -6,7 +6,8 @@ class App extends Component {
     state = {
         turn: 0,
         players: [],
-        newPlayer: ""
+        newPlayer: "",
+        newPlayerInit: 0
     }
     addPlayer = (name, init) => evt => {
         const { players } = this.state;
@@ -29,7 +30,7 @@ class App extends Component {
                 playerExists = true
             }
         }
-        playerExists || this.state.newPlayer === "" ? alert("Please enter a name") : this.setState({players: [...players, player], newPlayer: ""})
+        playerExists || this.state.newPlayer === "" ? alert("Please enter a name") : this.setState({players: [...players, player], newPlayer: "", newPlayerInit: 0})
     }
   render() {
     return (
@@ -55,10 +56,9 @@ class App extends Component {
             </section>
             <section id="input_box">
                 <section id="char_text">
-                    <p>Character Name</p>
-                    <input id='charInput' type="text" value={this.state.newPlayer} onChange={evt => {this.setState({newPlayer: evt.target.value})}}/>
-                    <button id='charSubmit' onClick={this.addPlayer(this.state.newPlayer, 1)}>Submit</button>
-                    <button id="removeChar" >Remove</button>
+                    <input id='charInput' type="text" placeholder={"Enter Character Name"} value={this.state.newPlayer} onChange={evt => {this.setState({newPlayer: evt.target.value})}}/>
+                    <input type="number" id="initInput" placeholder={"Initiative"} onChange={evt => {this.setState({newPlayerInit: Number(evt.target.value)})}}/>
+                    <button id='charSubmit' onClick={this.addPlayer(this.state.newPlayer, this.state.newPlayerInit)}>Submit</button>
                 </section>
                 <section id="turn_counter">
                     <p>Turn Counter</p>
